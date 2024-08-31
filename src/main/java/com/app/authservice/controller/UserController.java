@@ -108,4 +108,11 @@ public class UserController {
         errorResponse.put("error", "User not found");
         return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
     }
+
+    @GetMapping("/home")
+    public ResponseEntity<Map<String, String>> home() {
+        Map<String, String> response = new HashMap<>();
+        response.put("message", "Hello, World!");
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
 }
